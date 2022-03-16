@@ -1,0 +1,226 @@
+.index
+  width 100%
+  display flex
+  flex-direction column
+  justify-content space-between
+  padding-bottom vw(69)
+  color $black
+
+  @media $desktop
+    min-height vw(950)
+    height 100vh
+
+  @media $mobile
+    height auto
+    padding-bottom vm(60)
+
+  &__bg
+    pos absolute
+    bottom 0
+    left 0
+    width 100%
+    height calc(100% - 4.11458vw)
+    background-color: #E6EEF0;
+    opacity: 0.75;
+    overflow hidden
+
+    @media $mobile
+      opacity 1
+
+    @media $mobile
+      pos relative
+      height vm(530)
+
+    &::before,
+    &::after
+      content ''
+      pos absolute
+      left 0
+      width 100%
+      background: linear-gradient(180deg, #E6EEF0 0%, rgba(230, 238, 240, 0) 75.14%);
+      z-index 2
+
+    &::before
+      height vw(150)
+      opacity: 0.9;
+      bottom vw(-2)
+      transform: rotate(180deg)
+
+      @media $mobile 
+        background: linear-gradient(180deg, rgba(228, 236, 238, 0) 0%, #E4ECEE 55.09%)
+        transform rotate(0)
+        height vm(72)
+
+    &::after
+      opacity 0.7
+      height vw(253)
+      top 0
+
+      @media $mobile
+        height vm(110)
+        background: linear-gradient(180deg, #2F3451 0%, rgba(47, 52, 81, 0) 100%);
+
+    &-img
+      width 100%
+      height 100%
+      object-fit cover
+      transition transform .6s
+      @media $desktop
+        transform scale(1.11);
+
+      @media $mobile
+        object-position center
+        height 120%
+
+
+  &__content 
+    pos relative
+    z-index 5
+    margin-left auto
+    margin vw(216) vw(84) vw(12) auto
+    width vw(977)
+
+    @media (max-width: 1440px) 
+      margin-top vw(210)
+
+    @media $mobile
+      width 100%
+      margin 0
+      margin-top vm(-30)
+
+  &__info
+    margin-left vw(121)
+    width vw(702)
+
+    @media $mobile
+      margin 0 
+      padding 0 vm(30)
+      width auto
+
+  &__img 
+    object-fit contain
+    width 100%
+    height vw(137)
+    margin-bottom vw(35)
+
+    @media $mobile
+      height vm(50)
+      margin-bottom vm(23)
+      padding-right vm(20)
+
+  &__title
+    font-size vw(27)
+    font-weight 700
+    line-height 110%
+    font-weight bold
+    text-align center
+    margin-bottom vw(20)
+    padding-left vw(42)
+    height vw(36)
+    text-transform uppercase
+
+    @media $mobile
+      padding-left 0
+      height vm(20)
+      font-size vm(16)
+      margin-bottom vm(27)
+
+  &__desc 
+    font-size vw(19)
+    line-height 26rem
+
+    @media $mobile
+      font-size vm(16)
+
+    &:first-child
+      margin-bottom vw(3)
+
+      @media $mobile
+        margin-bottom vm(13)
+
+    &:nth-child(2)
+      mb vw(33)
+
+      @media (max-width: 1440px) 
+        margin-bottom vw(20)
+
+      @media $mobile
+        margin-bottom vm(26)
+
+  &__links
+    padding-right vw(35)
+
+    @media $mobile
+      padding-right 0
+
+  &__link
+    font-size vw(19)
+    width vw(281)
+    line-height vw(72)
+    margin-right vw(70)
+    margin 0 auto
+
+    @media $mobile
+      font-size vm(12)
+      line-height vm(36)
+      width vm(180)
+      margin 0 auto
+
+    &-text
+      pointer-events none
+
+  &__link-play 
+    width vw(46)
+    height vw(46)
+    margin-right vw(12)
+    pointer-events none
+
+    @media $mobile
+      width vm(23)
+      height vm(23)
+      margin-right vm(8)
+
+  &__scroll
+    margin 0 auto
+
+    &-img
+      overflow hidden
+      border-radius 50%
+      object-fit contain
+      width vw(50)
+      height vw(50)
+      transition transform .3s, background-color .3s
+      pointer-events none
+      background-color transparent
+
+      path
+        fill $black
+        animation arrow-btn 1.5s linear infinite
+
+      circle
+        stroke #898989
+
+    &:hover
+      .index__scroll-text
+        color #000
+      .index__scroll-img
+        transform scale(1.11)
+        circle
+          stroke #fff
+          fill #000
+
+        path
+          fill $white
+
+
+@keyframes arrow-btn {
+	0% {
+		transform translateY(-10%)
+	}
+	50% {
+		transform translateY(10%)
+	}
+	100% {
+		transform translateY(-10%)
+	}
+}

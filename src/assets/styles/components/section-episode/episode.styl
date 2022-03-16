@@ -1,0 +1,129 @@
+.episode
+  color $white
+  position relative  
+  min-height vw(950)
+  height 100vh
+  background-color #000
+
+  @media $mobile
+    min-height auto
+    height auto
+
+  &__left
+    pos relative
+    width vw(520)
+    margin-right vw(138)
+    @media $mobile
+      width 100%
+      margin-right 0
+
+  &__video
+    position relative
+    margin-top vw(76)
+    width vw(882)
+    height vw(496)
+
+  &__prev
+    width 100%
+    height 100%
+    object-fit cover
+
+  &__play
+    top 50%
+    left 50%
+    .video-play__img
+      width vw(83)
+      height vw(83)
+      margin-bottom 0
+
+  &__links
+    pos absolute
+    bottom 0
+    left 0
+    display flex
+    margin-top vw(48)
+
+    @media $mobile
+      pos static
+      margin-bottom vm(38)
+
+  &__link
+    font-size vw(16)
+    width vw(240)
+    line-height vw(66)
+    
+    @media $mobile
+      font-size vm(12)
+      width vm(200)
+      line-height vm(35)
+
+  &__link-play 
+    width vw(41)
+    height vw(41)
+    margin-right vw(17)
+
+    @media $mobile
+      width vm(23)
+      height vm(23)
+      margin-right vm(8)
+
+  &__slider
+    height 100%
+    
+  &__slide
+    pos relative
+    padding 160rem 0 30rem 158rem
+
+    @media $mobile
+      padding 90rem 20rem 123rem
+
+  .swiper-pagination 
+    left vw(167)
+    bottom vw(137)
+
+    @media $mobile
+      left vm(20)
+      bottom vm(99)
+
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+    background-color #fff
+
+  .swiper-button-prev, .swiper-button-next
+    bottom vw(103)
+
+    @media $mobile
+      bottom vm(85)
+
+  .swiper-button-next
+    right 243rem
+
+    @media $mobile 
+      right 20rem
+
+  .swiper-button-prev
+    right 333rem
+
+    @media $mobile 
+      right 62rem
+
+  .layout__desc
+    margin-bottom 0
+    
+    @media $mobile
+      margin-bottom vm(30)
+
+  .layout__title
+    display flex
+    margin-bottom 0
+
+    @media $mobile
+      margin-bottom vm(15)
+    // line-height 83%  
+
+  .layout__subtitle
+    mb vw(10)
+
+    @media $mobile
+      margin-bottom vm(15)
+
+    

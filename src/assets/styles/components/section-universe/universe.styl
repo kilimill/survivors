@@ -1,0 +1,175 @@
+.universe
+  padding-top vw(129)
+  padding-bottom vw(41)
+  background-color $bg-blue
+  pos relative
+  transition opacity .3s
+
+  @media (max-width: 1440px)
+    padding-top vw(100)
+
+  @media $mobile 
+    padding-top vm(137)
+    padding-bottom vm(25)
+
+  &.close-page
+    opacity 0
+
+  &__header
+    margin-bottom vw(58)
+
+    @media $mobile
+      margin-bottom vm(26)
+  
+  &__title
+    font-size vw(100)
+    line-height 118%
+    margin-bottom vw(25)
+    text-align center
+
+    @media (max-width: 1440px)
+      font-size vw(90)
+      margin-bottom vw(15)
+
+    @media $mobile
+      font-size vm(45)
+      margin-bottom vm(29)
+
+  &__desc
+    font-size vw(20)
+    line-height vw(27)
+    width vw(901)
+
+    @media $mobile
+      font-size vm(16)
+      line-height 135%
+      width vm(321)
+
+  &__slide
+
+    &-container
+      display flex
+      flex-direction column
+      align-items center
+      width vw(1013)
+      margin 0 auto
+
+      @media $mobile
+        width 100%
+
+  &__inner
+    pos relative
+    width 100%
+    height vw(570)
+    overflow hidden
+
+    @media $mobile
+      height vm(208)
+
+  &__preview
+    width 100%
+
+  &__video
+    top 54%
+
+    @media $mobile
+      top 53%
+
+  .video-play__img
+    pos static
+    transform translate(0)
+    margin-bottom 0
+
+    @media $mobile
+      width vm(38)
+      height vm(38)
+
+  .pointer
+    pointer-events auto
+
+  .swiper-button-prev,
+  .swiper-button-next
+    top vw(521)
+
+    @media $mobile
+      top vm(471)
+      width vm(34)
+      height vm(34)
+    
+    path
+      fill #000
+
+    circle
+      stroke #000
+
+  .swiper-button-prev
+    left vw(121)
+
+    @media $mobile
+      left vm(25)
+
+  .swiper-button-next
+    right vw(121)
+
+    @media $mobile
+      right vm(25)
+
+  &__info
+    display flex
+    align-items center
+    margin vw(35) auto vw(26) 0
+
+    @media $mobile
+      flex-direction column
+      justify-content center
+      margin vm(42) auto vm(19)
+
+    &-number
+      font-size vw(30)
+      font-weight 600
+      line-height 87%
+
+      @media $mobile
+        font-size vm(23)
+        line-height 135%
+
+    .slider__pag
+      margin-right vw(39)
+
+      @media $mobile
+        margin-right 0
+        width vm(62)
+
+      &-icon
+        margin-bottom 0
+
+        @media $mobile
+          margin-bottom vm(12)
+          height vm(49)
+
+      &-num
+        @media $mobile
+          top vm(9)
+          font-size vm(16)
+
+  &__link
+    font-size vw(18)
+    width vw(262)
+    line-height vw(66)
+    margin 0 auto
+
+    @media $mobile
+      font-size vm(16)
+      width vm(224)
+      line-height vm(54)
+
+  &__link-play 
+    width vw(43)
+    height vw(43)
+    margin-right vw(10)
+
+    @media $mobile
+      width vm(37)
+      height vm(37)
+      margin-right vm(11)
+    

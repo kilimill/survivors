@@ -1,0 +1,73 @@
+.trailer
+  background-color $bg-blue
+  padding 140rem 0 30rem
+
+  @media $mobile
+    padding 60rem 0 120rem
+
+  @media $mobile
+    padding vm(60) 0 vm(120)
+
+  &__content
+    position relative
+    width vw(1160)
+    height vw(652)
+    margin 0 auto vw(54)
+
+    @media $mobile
+      width vm(335)
+      height vm(188)
+      padding 0 vm(20)
+      margin-bottom vm(40)
+
+  &__preview
+    width 100%
+    height 100%
+    object-fit cover
+
+  &__link
+    font-size vw(18)
+    width vw(262)
+    line-height vw(69)
+    margin 0 auto
+
+    @media $mobile
+      font-size vm(12)
+      width vm(170)
+      line-height vm(34)
+
+  &__link-play 
+    width vw(43)
+    height vw(43)
+    margin-right vw(10)
+
+    @media $mobile
+      width vm(23)
+      height vm(23)
+      margin-right vm(8)
+
+  // &__play
+  //   pos absolute
+  //   top 50%
+  //   left 50%
+  //   transform translate(-50%, -50%)
+  //   text-align center
+  //   pointer-events none
+
+  //   &-img
+  //     object-fit cover
+  //     width vw(103)
+  //     height vw(103)
+  //     margin-bottom vw(20)
+
+  //     @media $mobile
+  //       width vm(33)
+  //       height vm(33)
+
+  //   &-text
+  //     font-size vw(18)
+  //     line-height 135%
+  //     color #CBCBCB
+
+  //     @media $mobile
+  //       font-size vm(14)

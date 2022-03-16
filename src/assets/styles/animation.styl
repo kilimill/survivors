@@ -1,0 +1,68 @@
+.fade-enter-active, 
+.fade-leave-active
+	transition opacity .5s
+
+.fade-enter,
+.fade-leave-to
+	opacity 0
+
+.main[loaded]
+	@media $desktop
+		.loader
+			transition-delay .5s
+
+			&_top
+				transform translateY(-100%)
+
+			&_bottom
+				transform translateY(100%)
+
+.scroll-anim
+	overflow hidden
+	&__wrapper,
+	&__text,
+	&__title
+		overflow hidden
+		display inline-block
+	@media $desktop
+		&__btn
+			opacity 0
+
+		&__text,
+		&__title,
+		&__btn
+			transform translateY(155%)
+			transition transform .6s, opacity .6s
+		
+.main.loaded-done
+	@media $desktop
+		.scroll-anim[visible]
+			.scroll-anim__text
+				transform translateY(0)
+			&:nth-child(2)
+				.scroll-anim__text
+					transition-delay .2s
+
+			&:nth-child(3)
+				.scroll-anim__text
+					transition-delay .4s
+
+			.scroll-anim__wrapper
+				.scroll-anim__title
+					transform translateY(0)
+
+				&:nth-child(2)
+					.scroll-anim__title
+						transition-delay .2s
+
+				&:nth-child(3)
+					.scroll-anim__title
+						transition-delay .4s
+
+				&:nth-child(4)
+					.scroll-anim__title
+						transition-delay .6s
+		.scroll-anim__btn[visible]
+			transform translateY(0)
+			opacity 1
+			

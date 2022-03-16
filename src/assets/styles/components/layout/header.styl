@@ -1,0 +1,259 @@
+.header
+  pos fixed
+  top 0
+  left 0
+  z-index 30
+  padding 0 50rem 0 42rem
+  width 100%
+  background-color $white;
+
+  @media $mobile
+    padding 0 20rem
+
+  &__nav
+    @media $desktop
+      height 100%
+    @media $mobile
+      pos absolute
+      top 100%
+      left 0
+      right 0
+      width 100%
+      opacity 0
+      height 0
+      overflow hidden
+      transition height .3s, opacity .3s
+
+  &__link 
+    font-size 0
+
+  &__container 
+    display flex
+    justify-content space-between
+    align-items center
+    height vw(79)
+
+    @media $desktop
+      transform translateY(-100%)
+      transition transform .4s, opacity .4s
+
+    @media $mobile
+      height vm(55)
+
+  &__list
+    display flex
+    align-items center
+    height 100%
+
+    @media $mobile
+      height auto
+      flex-direction column
+      align-items start
+      
+    &-inner
+      display flex
+      overflow hidden
+      max-height vm(300)
+      
+      @media $mobile 
+        transition max-height .3s, opacity .3s
+        flex-direction column
+        align-items start 
+
+  &__item 
+    margin-right vw(73)
+
+    &_for
+      @media $desktop
+        height 100%
+        display flex
+        align-items center
+
+        &:hover
+          
+          .header__item-link::before
+            transform translateY(-50%) rotate(0)
+
+          .header__drop
+            max-height vw(700)
+            padding-bottom vw(42)
+            padding-top vw(18)
+
+      @media $mobile
+        width 100%
+        
+      .header__item-link
+        pos relative
+        @media $mobile
+          border-color transparent !important
+          transition padding .3s
+
+        &::after,
+        &::before
+          content ''
+          pos absolute
+          top 50%
+          width vw(16)
+          height vw(10)
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1L0.999999 8.11803L1.79383 9L8 2.68957L14.2062 9L15 8.11803L8 1Z' fill='black' stroke='black'/%3E%3C/svg%3E%0A");
+          background-repeat no-repeat
+          background-size contain
+
+          @media $mobile
+            width vm(14)
+            height vm(8)
+
+        &::before
+          right vw(-24)
+          transform translateY(-50%) rotate(180deg)
+          transition transform .3s, opacity .3s
+
+          @media $mobile
+            left vm(120 )
+
+        &::after
+          display none
+          @media $mobile
+            display block
+            opacity 0
+            left 0
+            transform translateY(-50%) rotate(-90deg)
+            transition opacity .1s
+        
+  &__item-link 
+    font-size vw(19)
+    line-height 135%
+    c $black
+    padding vw(8) 0
+    border-bottom vw(3px) solid transparent
+    transition font-weight .3s, border-color .3s
+    display block
+
+    @media $mobile 
+      border-width vm(3)
+
+    &.active
+      font-weight 700
+      border-color $black
+ 
+  &__social
+    pos absolute
+    bottom vm(83)
+    opacity 0
+    transition opacity .3s
+
+  &__social-title
+    font-size vm(16)
+    line-height 135%
+    margin-bottom vm(16)
+  
+  .tags-info__restrictions
+    color $black
+    border-color $black
+
+  &__drop
+    max-height 0
+    overflow hidden
+    transition max-height .5s, padding .5s, opacity .3s
+    pos absolute
+    top 100%
+    right vw(144)
+    background-color $white
+    width vw(291)
+
+    @media $mobile
+      position static
+      top 0
+      right 0
+      width 100%
+
+    &-link
+      display block
+      padding 0 vw(7) 0 vw(69)
+      font-size vw(16)
+      line-height 135%
+      c $black
+      transition font-weight .3s
+
+      @media $mobile
+        font-size vm(16)
+        padding 0
+        padding-left vm(47)
+
+      @media $desktop
+        &:hover
+          font-weight 600
+
+      &[disabled]
+        pointer-events none
+        font-weight 400
+        c #959595
+
+    &-item
+      padding vw(7) 0
+
+      @media $mobile
+        transform translateX(-100%)
+        transition transform .4s
+        // transition-delay .4s
+        padding 0
+        &:not(:last-child)
+          margin-bottom vm(14)
+
+body.open
+  overflow hidden
+  .header
+    &__nav
+      opacity 1
+      height calc(100vh - 14.7vw)
+      background-color $white
+      padding 28rem 20rem 30rem
+      display flex
+      flex-direction column
+      justify-content space-between
+
+    &__social
+      opacity 1
+
+    &__list,
+    &__list-inner
+      width 100%
+
+    &__item
+      margin-right 0
+      margin-bottom vm(21)
+
+    &__item-link
+      font-size vm(19)
+      padding 0
+
+  .close-list
+    max-height 0
+    opacity 0
+
+  .header__item_for
+    margin-bottom 0
+
+    &.open
+      .header__item-link_uni
+        font-weight 700
+        padding-left vm(36)
+
+        &::before
+          opacity 0
+
+        &::after
+          opacity 1
+
+      .header__drop
+        max-height vm(300)
+        margin-top vm(16)
+
+        .header__drop-item
+          transform translateX(0)
+
+.main[loaded]
+  @media $desktop
+    .header__container
+      transition-delay 1.5s
+      transform translateY(0)

@@ -1,0 +1,59 @@
+.popup
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  display flex
+  align-items center
+  justify-content center
+  background-color #E4ECEE
+  z-index 105
+
+  &__close-button
+    position absolute
+    top 47rem
+    right 47rem
+    width 47rem
+    height 47rem
+    background url("data:image/svg+xml,%3Csvg viewBox='0 0 47 47' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32.7517 13.2589L23.5001 22.5105L14.2485 13.2589L13.259 14.2484L22.5106 23.5L13.259 32.7515L14.2485 33.741L23.5001 24.4894L32.7517 33.741L33.7411 32.7515L24.4896 23.5L33.7411 14.2484L32.7517 13.2589Z' fill='black'/%3E%3Cpath d='M23.5 0C10.5379 0 0 10.5379 0 23.5C0 36.4621 10.5379 47 23.5 47C36.4621 47 47 36.4621 47 23.5C47 10.5379 36.4621 0 23.5 0ZM23.5 45.6147C11.28 45.6147 1.38526 35.72 1.38526 23.5C1.38526 11.28 11.28 1.38526 23.5 1.38526C35.72 1.38526 45.6147 11.28 45.6147 23.5C45.6147 35.72 35.72 45.6147 23.5 45.6147Z' fill='black'/%3E%3C/svg%3E%0A") no-repeat center
+    background-size 46rem
+    z-index 1
+    transition opacity 0.5s
+
+    &:hover
+      @media $desktop
+        opacity 0.6
+
+  &--frame
+    background-color rgba(#131418, 0.85)
+    & ^[0]__close-button
+      top 22rem
+      right 22rem
+      width 39rem
+      height 39rem
+      background url("data:image/svg+xml,%3Csvg viewBox='0 0 39 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.1767 11.0021L19.4998 18.679L11.823 11.0021L11.002 11.8232L18.6788 19.5L11.002 27.1769L11.823 27.9979L19.4998 20.3211L27.1767 27.9979L27.9977 27.1769L20.3209 19.5L27.9977 11.8232L27.1767 11.0021Z' fill='white'/%3E%3Cpath d='M19.5 0C8.74421 0 0 8.74421 0 19.5C0 30.2558 8.74421 39 19.5 39C30.2558 39 39 30.2558 39 19.5C39 8.74421 30.2558 0 19.5 0ZM19.5 37.8505C9.36 37.8505 1.14947 29.64 1.14947 19.5C1.14947 9.36 9.36 1.14947 19.5 1.14947C29.64 1.14947 37.8505 9.36 37.8505 19.5C37.8505 29.64 29.64 37.8505 19.5 37.8505Z' fill='white'/%3E%3C/svg%3E") center no-repeat
+      background-size 39rem
+
+  &--actors
+    top 79rem
+    width 100%
+
+    @media $mobile
+      top 55rem
+      padding-top 43rem
+      overflow hidden auto
+
+    & ^[0]__container
+      width 100%
+      height 100%
+    & ^[0]__content
+      width 100%
+      height 100%
+    & ^[0]__close-button
+      @media $mobile
+        top 10rem
+        right 20rem
+        width 22rem
+        height 22rem
+        background-size 100%

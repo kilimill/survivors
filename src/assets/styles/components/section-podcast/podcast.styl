@@ -1,0 +1,161 @@
+.podcast
+  color $white
+  position relative  
+  min-height vw(950)
+  height 100vh
+
+  @media $mobile
+    min-height auto
+    height auto
+
+  &__bg
+    pos absolute
+    width 100%
+    height 100%
+    top 0
+    left 0
+    background-color #060606
+    z-index 1
+
+    &::before
+      background linear-gradient(115.78deg, #123143 7.27%, rgba(8, 31, 45, 0) 94.21%)
+      opacity .2
+      content ''
+      pos absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+
+  &__left
+    width vw(498)
+    margin-right vw(185)
+    @media $mobile
+      pos relative
+      width 100%
+      margin-right 0
+      margin-bottom vm(55)
+
+  &__slider
+    height 100%
+    
+  &__slide
+    pos relative
+    padding 160rem 0 30rem 158rem
+
+    @media $mobile
+      padding 90rem 20rem 153rem
+
+  &__title
+    margin-bottom 0
+    display flex
+    margin-left vw(-8)
+    @media $mobile
+      margin-bottom vm(10)
+      margin-left vm(-5)
+      
+  &__descs
+    @media $mobile
+      overflow hidden
+      max-height vm(1000)
+      transition max-height .5s
+
+      .layout__desc
+        color #8D949D
+        margin-bottom vm(20)
+
+      &.hide-text
+        max-height vm(178)
+
+  &__btn-more
+    @media $mobile
+      pos absolute
+      bottom vm(-27)
+      z-index 1
+      left 0
+      font-size vm(16)
+      color #8D949D
+
+  &__prev
+    width 100%
+    height 100%
+    pointer-events none
+
+  &__video
+    pos relative
+    height vw(469)
+    width vw(834)
+    overflow hidden
+    margin-top vw(76)
+    
+    @media $mobile
+      width vm(335)
+      height vm(188)
+
+    .video-play__img
+      margin-bottom 0
+      pos absolute
+      top 53%
+      left 51%
+      transform translate(-50%, -50%)
+
+  &__play
+    width 100%
+    height 100%
+    background-size cover
+    background-position center
+    background-repeat no-repeat
+    z-index 100
+
+  
+  .layout__subtitle
+    mb vw(10)
+
+    @media $mobile
+      margin-bottom vm(15)
+
+    .video-play__img
+      width vw(83)
+      height vw(83)
+      margin-bottom 0
+
+      @media $mobile
+        width vm(47)
+        height vm(47)
+
+    .video-play__bg
+      object-fit cover
+      width 100%
+      height 100%
+
+  .pointer
+    pointer-events auto
+
+  .swiper-pagination 
+    left vw(167)
+    bottom vw(137)
+
+    @media $mobile
+      left vm(20)
+      bottom vm(99)
+
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+    background-color #fff
+
+  .swiper-button-prev, .swiper-button-next
+    bottom vw(103)
+
+    @media $mobile
+      bottom vm(85)
+
+  .swiper-button-next
+    right 243rem
+
+    @media $mobile 
+      right 20rem
+
+  .swiper-button-prev
+    right 333rem
+
+    @media $mobile 
+      right 62rem

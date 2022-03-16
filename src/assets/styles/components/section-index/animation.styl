@@ -1,0 +1,37 @@
+.index__anim-wrapper
+.index__anim-inner
+  overflow hidden
+  display inline-block
+
+.index__anim-inner,
+.index__anim-link
+  @media $desktop
+    transform translateY(155%)
+    transition transform .6s, opacity .6s
+
+.index__anim-link
+  @media $desktop
+    opacity 0
+
+.main[loaded]
+  .index__bg-img
+    transition-delay .6s
+    transform scale(1);
+
+  .index__title-inner,
+  .index__anim-inner
+      transform translateY(0)
+      transition-delay 1.5s
+
+  .index__anim-wrapper:nth-child(2)
+    .index__anim-inner
+        transition-delay 1.7s
+
+  .index__anim-wrapper:nth-child(3)
+    .index__anim-inner
+        transition-delay 1.9s
+  
+  .index__anim-link
+    transform translateY(0)
+    opacity 1
+    transition-delay 2.1s

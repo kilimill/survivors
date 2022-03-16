@@ -1,0 +1,483 @@
+html
+	ff $gt
+	font-size vw(1)
+	font-weight 400
+	@media $tablet 
+		font-size vw(1)
+	@media $mobile
+		font-size vm(1)
+
+body
+	color #000
+	background-color $bg-blue
+	// oh()
+	
+	&.popup-open
+		oh()
+
+		.main
+			overflow-y scroll
+
+.logo 
+	object-fit cover
+
+	&_afisha 
+		width vw(110)
+
+		@media $mobile
+			width vm(53)
+
+	&_okko
+		width vw(87)
+
+		@media $mobile
+			width vm(43)
+
+.btn 
+	position relative
+	border vw(2) solid transparent
+	display block
+	text-align center 
+	font-weight 700
+	display flex
+	justify-content center
+	align-items center
+	transition background-color .4s, color .4s, border-color .4s
+	z-index 11
+
+	@media $mobile
+		border-width vm(2)
+
+	&__play
+		path,
+		circle
+			stroke-width 2
+			transition stroke .4s
+
+
+	&_black
+		border-color $black
+		color $black
+
+		.btn__play
+			path,
+			circle
+				stroke $black
+
+		@media $desktop
+
+			&:hover
+				background-color $black
+				color $white
+				
+				.btn__play
+					path,
+					circle
+						stroke $white
+
+	&_white
+		border-color $white
+		color $white
+
+		.btn__play
+			path,
+			circle
+				stroke $white
+
+		@media $desktop
+
+			&:hover
+				background-color $white
+				color $black
+				
+				.btn__play
+					path,
+					circle
+						stroke $black
+
+.tags-info
+	display flex
+	align-items flex-end
+	transition font-size .3s, opacity .3s
+	opacity 1
+
+	@media $mobile
+		align-items center
+
+	&__restrictions
+		width vw(44)
+		height vw(44)
+		display flex
+		justify-content center
+		align-items center
+		font-size vw(21)
+		border-radius 50%
+		border vw(2) solid #fff
+		font-weight: 300;
+		margin-right vw(37)
+		
+		@media $mobile
+			font-size vm(11)
+			width vm(22)
+			height vm(22)
+			margin-right vm(10)			
+
+	&__tag
+		pos relative
+		font-size vw(20)
+		line-height 135%
+		font-weight 500
+		text-transform uppercase
+		mix-blend-mode: difference;
+
+		@media $mobile
+			font-size vm(12)
+			padding-right vm(128)
+			color $white
+
+			&::before
+				content ''
+				pos absolute
+				right 0
+				top 50%
+				transform translateY(-50%)
+				width vm(118)
+				height vm(1)
+				background-color $white
+
+.window-height
+	pos relative
+
+.main
+	display flex
+	flex-direction column
+	min-height 100vh
+
+	&__content
+		flex 1 0 auto
+
+.title 
+	font-size 100rem
+	line-height 96rem
+	color $black
+
+	@media $mobile 
+		font-size 40rem
+		line-height 47rem
+
+	&--white
+		color $white
+
+.swiper-container
+	position relative
+	padding 0
+	overflow hidden
+	list-style none
+	z-index 1
+
+	.swiper-wrapper 
+		position relative
+		width 100%
+		height 100%
+		z-index 1
+		display flex
+		transition-property transform
+		box-sizing content-box
+
+	.swiper-slide
+		flex-shrink 0
+    position relative
+    transition-property transform
+
+.swiper-button-prev, .swiper-button-next
+	position absolute
+	border-radius 50%
+	display block
+	overflow hidden
+	z-index 11
+
+.swiper-button-prev:after, .swiper-button-next:after
+	display none
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled ,
+.episode__btn-prev.swiper-button-disabled, .episode__btn-next.swiper-button-disabled
+	opacity 0.35
+	cursor auto
+	pointer-events none
+
+.swiper-pagination 
+	position absolute
+	text-align center
+	transition 300ms opacity
+	transform translate3d(0, 0, 0)
+
+.swiper-pagination-clickable .swiper-pagination-bullet 
+	cursor pointer
+
+.swiper-pagination-progressbar
+	height 1rem
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+	position absolute
+	left 0
+	bottom 0
+	width 100%
+	height 2rem
+	transform scale(0)
+	transform-origin left top
+
+.swiper-container-multirow-column > .swiper-wrapper 
+	flex-wrap wrap
+
+	@media $mobile
+		margin vm(-10) 0
+
+.swiper-button-prev, .swiper-button-next
+	position absolute
+	bottom 0
+	width 64rem
+	height 64rem
+
+	@media $mobile 
+		width 31rem
+		height 31rem
+
+	svg
+		circle, path
+			transition 0.5s
+	@media $desktop
+		&:hover
+			svg
+				circle
+					fill #000
+				path 
+					fill #fff
+					stroke #fff
+
+.swiper-button-prev
+	right 383rem
+
+	@media $mobile 
+		right 42rem
+
+.swiper-button-next
+	right 286rem
+
+	@media $mobile 
+		right 0rem
+
+.swiper-pagination 
+	position absolute
+	z-index 1
+	bottom 33rem
+	left 0rem
+	height 2rem
+	max-width 1260rem
+	width 100%
+
+	@media $mobile 
+		bottom 14rem
+		max-width 239rem
+
+.swiper-pagination-bullet
+	display inline-block
+	width 218rem
+	height 1rem
+
+.swiper-pagination-bullet-active
+	height 2rem
+	background-color #000
+
+.swiper-pagination-progressbar 
+	background #999999
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill 
+	position absolute
+	left 0
+	bottom 0
+	width 100%
+	transform scale(0)
+	transform-origin left top
+
+.transparency
+	opacity 0
+
+.loader
+	@media $desktop
+		pos fixed
+		z-index 100
+		left 0
+		width 100%
+		height 50%
+		background-color $white
+		transition transform 1s cubic-bezier(.23,1,.32,1) .4s
+
+		&_top
+			top 0
+
+		&_bottom
+			bottom 0
+
+.video-play
+	pos absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	text-align center
+	pointer-events none
+
+	&__img
+		object-fit cover
+		width vw(103)
+		height vw(103)
+		transition fill .3s
+
+		@media $mobile
+			width vm(33)
+			height vm(33)
+
+.trailer__content,
+.episode__video,
+.podcast__video,
+.universe__inner
+	&:hover
+		.video-play
+			&__img
+				fill #000
+
+.hide
+	display none
+	
+
+.layout
+	&__info
+		pos relative
+		z-index 5
+		display flex
+
+		@media $mobile
+			flex-direction column
+
+	&__title
+		font-size vw(100)
+		line-height 105%
+		margin-bottom vw(15)
+
+		@media $mobile
+			font-size vm(40)
+			margin-bottom vm(15)
+
+	&__subtitle
+		font-size vw(24)
+		line-height 118%
+		margin-bottom vw(34)
+
+		@media $mobile
+			font-size vm(20)
+			margin-bottom vm(15)
+
+	&__desc
+		font-size vw(18)
+		line-height 140%
+		margin-bottom vw(22)
+
+		@media $mobile
+			font-size vm(16)
+			margin-bottom vm(22)
+
+	&__block-text span
+		display block
+
+
+.btn-slider
+	pos absolute
+	top 50%
+	transform translateY(-50%)
+	z-index 10
+	transition opacity .4s
+
+	@media $mobile
+		top auto
+		bottom vm(40)
+
+	&__prev
+		left vw(50)
+		transform translateY(-50%) rotate(180deg)
+
+		@media $mobile
+			left vm(30)
+			transform translateX(-50%)
+
+	&__next
+		right vw(50)
+
+		@media $mobile
+			right vm(30)
+			transform translateX(50%)
+
+	svg
+		width vw(50)
+		height vw(50)
+		object-fit cover
+		transition transform .4s
+
+		@media $mobile
+			width vm(40)
+			height vm(40)
+
+		path
+			fill $white
+
+	&:hover
+		svg
+			transform scale(1.11)
+
+		&.swiper-button-disabled
+			svg
+				transform none
+
+	&.swiper-button-disabled
+		cursor default
+		opacity 0.35
+
+.slider__pag
+	pos relative
+	
+	
+	// @media $mobile
+	// 	width vm(53)
+
+	&-icon
+		pos relative
+		display inline-block
+		display flex
+		justify-content center
+		align-items center
+		width 100%
+		width vw(74)
+		height vw(59)
+		background-size contain
+		background-repeat no-repeat
+		background-position center
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 71 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='35.2745' cy='22.2745' r='15.2745' fill='black'/%3E%3Cpath d='M70.0195 0H0.864438C0.387268 0 0 0.387268 0 0.864438V43.9031C0 44.3811 0.387268 44.7675 0.864438 44.7675H70.0195C70.4975 44.7675 70.8839 44.3811 70.8839 43.9031V0.864438C70.8839 0.387268 70.4975 0 70.0195 0ZM69.155 43.0386H1.72888V1.72888H69.155V43.0386Z' fill='black'/%3E%3Cpath d='M70.0195 50.8322H20.08C19.6772 48.876 17.9423 47.4004 15.8694 47.4004C13.7964 47.4004 12.0615 48.876 11.6587 50.8322H0.864438C0.387268 50.8322 0 51.2186 0 51.6966C0 52.1747 0.387268 52.5611 0.864438 52.5611H11.6569C12.0572 54.5208 13.793 55.9998 15.8685 55.9998C17.9449 55.9998 19.6807 54.5208 20.0809 52.5611H70.0195C70.4975 52.5611 70.8839 52.1747 70.8839 51.6966C70.8839 51.2186 70.4975 50.8322 70.0195 50.8322ZM15.8685 54.2709C14.4517 54.2709 13.2985 53.1178 13.2985 51.7001C13.2985 50.2824 14.4517 49.1293 15.8685 49.1293C17.2844 49.1293 18.4359 50.2798 18.4384 51.6949C18.4384 51.6958 18.4384 51.6958 18.4384 51.6966C18.4384 51.6984 18.4393 51.6992 18.4393 51.701C18.4393 53.1178 17.2862 54.2709 15.8685 54.2709Z' fill='black'/%3E%3C/svg%3E%0A");
+
+		@media $mobile
+			width vm(53)
+			height vm(42)
+
+	&-num
+		// pos absolute
+		// top 15%
+		// left 50%
+		// transform translateY(-25%)
+		padding-bottom vw(13)
+		z-index 10
+		font-weight 600
+		font-size vw(20)
+		line-height 135%
+		color #fff
+
+		@media $mobile
+			// top vm(7)
+			font-size vm(14)
+			padding-bottom vm(9)

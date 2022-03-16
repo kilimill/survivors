@@ -1,0 +1,315 @@
+.calendar
+  position relative
+  padding 128rem 0 101rem 164rem
+  overflow hidden
+
+  @media $mobile
+    padding 125rem 0 45rem 20rem
+
+  &__bg
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    z-index -1
+    // transition opacity 0.1s, visibility 0.1s
+
+    opacity 0
+    visibility hidden
+
+    &.show
+      opacity 1
+      visibility visible
+
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background linear-gradient(115.78deg, #123143 7.27%, rgba(8, 31, 45, 0) 94.21%)
+      opacity 0.5
+
+      @media $mobile 
+        display none
+        background linear-gradient(115.78deg, #123143 7.27%, rgba(8, 31, 45, 0) 94.21%)
+
+  &__title
+    max-width 955rem
+    margin-bottom 37rem
+    margin-left -6rem
+
+    @media $mobile
+      .scroll-anim__wrapper
+        &:nth-child(1)
+          margin-bottom -20rem
+
+  &__slider-wrap
+    position relative
+    padding-bottom 129rem
+
+    @media $mobile 
+      padding-bottom 83rem
+
+  &__slider
+    width 95%
+    overflow visible
+
+  &__slide 
+    width 351rem
+    height 100%
+    margin-right 42rem
+
+    @media $mobile
+      width 262rem
+      margin-right 32rem
+
+    &:nth-child(3)
+      margin-right 84rem
+
+    &:nth-child(7)
+      margin-right 120rem
+
+      @media $mobile
+        margin-right 0
+
+  &__month
+    position relative
+    margin-bottom 55rem
+    font-size 26rem
+    line-height 31rem
+    color #fff
+
+    @media $mobile 
+      margin-bottom 0
+      padding-bottom 81rem
+      font-size 20rem
+      line-height 24rem
+
+      &:after
+        content ''
+        position absolute
+        left 0
+        bottom 2rem
+        width 1rem
+        height 70rem
+        border-left 1rem dashed rgba($white, 0.5)
+
+  &__item
+    display flex
+    flex-direction column
+    justify-content space-between
+    width 100%
+    height 220rem
+    padding 7rem 31rem 27rem 38rem
+    border 1px solid rgba(#fff, 0.5)
+    cursor pointer
+    transition border 0.5s, transform .4s
+
+    @media $mobile
+      height 164rem
+      padding 7rem 31rem 27rem 20rem
+
+    &:not(.calendar__item--available)
+      &:hover
+        @media $desktop
+          border-color #fff
+          & ^[0]__item-episode
+            color #C5C5C5
+          & ^[0]__item-text
+            opacity 1
+            visibility visible
+
+    &--available
+      padding 7rem 25rem 31rem 30rem
+      background-color #fff
+      border 1px solid rgba(#fff, 0.9)
+
+      &:hover
+        @media $desktop
+          transform scale(1.11)
+
+          .btn_black
+            background-color $black
+            color $white
+            
+            .btn__play
+              path,
+              circle
+                stroke $white
+            
+
+      @media $mobile
+        padding-left 20rem
+        padding-right 20rem
+
+      & ^[0]__item-date
+        color #000
+      & ^[0]__item-episode
+        position relative
+        padding-right 53rem
+        color #000
+        font-weight 700
+
+        @media $mobile
+          padding-right 38rem
+
+        &:after
+          content ''
+          position absolute
+          right 0
+          top -3rem
+          width 37rem
+          height 37rem
+          background url("data:image/svg+xml,%3Csvg viewBox='0 0 38 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.5452 18.5041C33.5452 19.2537 33.4952 20.0033 33.3952 20.7452C33.4145 20.5915 33.4375 20.4377 33.4568 20.2839C33.2569 21.7601 32.8648 23.2016 32.2882 24.5701C32.3458 24.4317 32.4035 24.2933 32.4611 24.1588C31.8999 25.4811 31.1695 26.7266 30.2931 27.8645C30.3815 27.7491 30.4738 27.63 30.5622 27.5146C29.678 28.6563 28.6517 29.6827 27.51 30.5668C27.6253 30.4784 27.7445 30.3862 27.8598 30.2978C26.7219 31.1742 25.4765 31.9007 24.1541 32.4658C24.2925 32.4082 24.4309 32.3505 24.5654 32.2928C23.1931 32.8694 21.7515 33.2615 20.2793 33.4614C20.433 33.4422 20.5868 33.4191 20.7405 33.3999C19.2529 33.596 17.746 33.596 16.2584 33.3999C16.4121 33.4191 16.5659 33.4422 16.7196 33.4614C15.2435 33.2615 13.802 32.8694 12.4335 32.2928C12.5719 32.3505 12.7103 32.4082 12.8448 32.4658C11.5225 31.9046 10.277 31.1742 9.13913 30.2978C9.25445 30.3862 9.37362 30.4784 9.48894 30.5668C8.34725 29.6827 7.32088 28.6563 6.43674 27.5146C6.52516 27.63 6.61741 27.7491 6.70583 27.8645C5.82938 26.7266 5.10285 25.4811 4.53777 24.1588C4.59543 24.2971 4.65309 24.4355 4.71075 24.5701C4.13414 23.1977 3.74204 21.7562 3.54215 20.2839C3.56137 20.4377 3.58444 20.5915 3.60366 20.7452C3.40761 19.2576 3.40761 17.7507 3.60366 16.263C3.58444 16.4168 3.56137 16.5706 3.54215 16.7243C3.74204 15.2482 4.13414 13.8067 4.71075 12.4382C4.65309 12.5766 4.59543 12.7149 4.53777 12.8495C5.099 11.5271 5.82938 10.2816 6.70583 9.1438C6.61741 9.25912 6.52516 9.37829 6.43674 9.49361C7.32088 8.35192 8.34725 7.32555 9.48894 6.44142C9.37362 6.52983 9.25445 6.62209 9.13913 6.7105C10.277 5.83405 11.5225 5.10752 12.8448 4.54244C12.7064 4.6001 12.568 4.65776 12.4335 4.71543C13.8058 4.13881 15.2474 3.74672 16.7196 3.54683C16.5659 3.56605 16.4121 3.58911 16.2584 3.60833C17.746 3.41228 19.2529 3.41228 20.7405 3.60833C20.5868 3.58911 20.433 3.56605 20.2793 3.54683C21.7554 3.74672 23.1969 4.13881 24.5654 4.71543C24.427 4.65776 24.2886 4.6001 24.1541 4.54244C25.4765 5.10368 26.7219 5.83405 27.8598 6.7105C27.7445 6.62209 27.6253 6.52983 27.51 6.44142C28.6517 7.32555 29.678 8.35192 30.5622 9.49361C30.4738 9.37829 30.3815 9.25912 30.2931 9.1438C31.1695 10.2816 31.8961 11.5271 32.4611 12.8495C32.4035 12.7111 32.3458 12.5727 32.2882 12.4382C32.8648 13.8105 33.2569 15.252 33.4568 16.7243C33.4375 16.5706 33.4145 16.4168 33.3952 16.263C33.4952 17.0049 33.5413 17.7545 33.5452 18.5041C33.5452 18.9462 33.7374 19.4113 34.0526 19.7265C34.3524 20.0264 34.8445 20.2532 35.275 20.234C35.7209 20.2147 36.186 20.0687 36.4974 19.7265C36.8088 19.3883 37.0048 18.9731 37.0048 18.5041C37.001 16.6013 36.7127 14.6716 36.1284 12.861C35.5595 11.1043 34.7368 9.40904 33.6605 7.90216C33.0916 7.10644 32.4765 6.34147 31.8 5.638C31.1196 4.93069 30.3738 4.30411 29.5935 3.70828C28.125 2.58581 26.4874 1.72858 24.7538 1.09046C22.974 0.436968 21.0711 0.0910015 19.1799 0.01412C17.2617 -0.0627616 15.3012 0.175571 13.4522 0.698366C11.6801 1.20194 9.95792 1.9746 8.42028 2.98944C6.89803 3.99274 5.49879 5.20362 4.33788 6.61056C3.70745 7.37168 3.12315 8.17125 2.61189 9.01695C2.10062 9.86649 1.68546 10.7622 1.31259 11.677C0.593745 13.4299 0.197805 15.2943 0.0517306 17.1818C-0.0981884 19.0961 0.0824832 21.0566 0.53224 22.9248C0.974309 24.7315 1.70468 26.4883 2.6657 28.072C3.61135 29.625 4.79148 31.0666 6.15228 32.2736C7.52077 33.4883 9.0584 34.5301 10.7267 35.2835C11.6339 35.6948 12.5642 36.0562 13.5252 36.3253C14.5093 36.5982 15.5088 36.7673 16.5236 36.8865C18.4533 37.1133 20.4138 36.9903 22.3166 36.6059C24.1349 36.2369 25.907 35.5603 27.5253 34.6569C29.1129 33.7728 30.5929 32.6273 31.8499 31.3126C33.1146 29.9902 34.2102 28.468 35.0251 26.8266C35.8555 25.1505 36.4667 23.363 36.7511 21.514C36.9049 20.5146 37.0048 19.5113 37.0048 18.5003C37.0048 18.0582 36.8126 17.5892 36.4974 17.2779C36.1976 16.978 35.7055 16.7512 35.275 16.7704C34.337 16.8166 33.5452 17.5354 33.5452 18.5041Z' fill='black'/%3E%3Cpath d='M9.17752 19.6728C9.78873 20.284 10.4038 20.899 11.015 21.5102C11.9914 22.4866 12.9678 23.463 13.9442 24.4394C14.1671 24.6624 14.3901 24.8853 14.613 25.1083C15.2742 25.7695 16.3967 25.7695 17.0579 25.1083C17.4154 24.7508 17.769 24.3971 18.1265 24.0396C18.9838 23.1824 19.8371 22.329 20.6944 21.4718C21.7361 20.4301 22.774 19.3922 23.8158 18.3504C24.7114 17.4547 25.6071 16.5591 26.5028 15.6634C26.9371 15.229 27.3831 14.7985 27.8098 14.3564C27.8174 14.3487 27.8213 14.3449 27.829 14.3372C28.1442 14.022 28.3364 13.5568 28.3364 13.1148C28.3364 12.6919 28.148 12.1845 27.829 11.8924C27.4984 11.5887 27.0678 11.3657 26.6066 11.3849C26.1491 11.4042 25.7147 11.5618 25.3841 11.8924C25.0266 12.2499 24.673 12.6035 24.3155 12.961C23.4583 13.8182 22.6049 14.6716 21.7476 15.5289C20.7059 16.5706 19.668 17.6085 18.6263 18.6502C17.7306 19.5459 16.8349 20.4416 15.9392 21.3373C15.5049 21.7716 15.059 22.2022 14.6323 22.6442C14.6246 22.6519 14.6207 22.6558 14.613 22.6635C15.428 22.6635 16.2429 22.6635 17.0579 22.6635C16.4467 22.0523 15.8316 21.4372 15.2204 20.826C14.244 19.8496 13.2676 18.8732 12.2912 17.8968C12.0683 17.6739 11.8453 17.4509 11.6223 17.2279C11.3071 16.9127 10.842 16.7205 10.3999 16.7205C9.97709 16.7205 9.46967 16.9089 9.17752 17.2279C8.87384 17.5585 8.65088 17.9891 8.6701 18.4504C8.68932 18.9078 8.84693 19.3422 9.17752 19.6728Z' fill='black'/%3E%3C/svg%3E%0A") center no-repeat
+          background-size 100%
+
+          @media $mobile
+            width 27rem
+            height 27rem
+
+  &__info
+    display flex
+    justify-content space-between
+    width 100%
+
+  &__item-date
+    font-size 100rem
+    line-height 118rem
+    color #fff
+    transition color .3s
+
+    @media $mobile
+      font-size 75rem
+      line-height 89rem
+
+  &__item-episodes
+    display flex
+    flex-direction column
+
+  &__item-episode
+    margin-top 24rem
+    font-size 22rem
+    line-height 26rem
+    color #818181
+    transition color 0.5s
+
+    @media $mobile
+      margin-top 19rem
+      font-size 17rem
+      line-height 19rem
+
+
+
+  &__item-text
+    font-size 16rem
+    line-height 22rem
+    color #fff
+    opacity 0
+    visibility hidden
+    transition opacity 0.5s, visibility 0.5s
+
+  &__item--hov
+    transition background-color .4s
+    @media $desktop
+      &:hover 
+        background-color #fff
+        .calendar__item-text
+        .calendar__item-date,
+        .calendar__item-episode
+          color #000
+
+  &__item-link
+    width 167rem
+    margin-left 11rem
+    padding 7rem 0
+    font-size 16rem
+    line-height 23rem
+
+    @media $mobile
+      width 125rem
+      margin-top 7rem
+      padding 6rem 0
+      font-size 12rem
+      line-height 24rem
+  
+  &__item-link-play
+    width 32rem
+    height 32rem
+    margin-right 10rem
+
+    @media $mobile
+      width 23rem
+      height 23rem
+
+  .swiper-wrapper
+    align-items flex-end
+
+  .swiper-button-prev, 
+  .swiper-button-next
+    position absolute
+    bottom 0
+    width 64rem
+    height 64rem
+    circle
+      fill transparent
+      transition fill 0.5s
+
+    @media $desktop
+      &:hover 
+        circle
+          fill #000
+
+    @media $mobile 
+      width 31rem
+      height 31rem
+
+  .swiper-button-next
+    right 286rem
+
+    @media $mobile 
+      right 19rem
+  
+  .swiper-button-prev
+    right 376rem
+
+    @media $mobile 
+      right 63rem
+
+  .swiper-pagination 
+    position absolute
+    bottom 33rem
+    left 0rem
+    max-width 1260rem
+    width 100%
+
+    @media $mobile 
+      bottom 15rem
+      max-width 239rem
+
+  .swiper-pagination-bullet
+    display inline-block
+    width 218rem
+    height 1rem
+
+  .swiper-pagination-bullet-active
+    height 2rem
+    background-color #000
+
+  .swiper-pagination-progressbar 
+    background #999999
+  
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill 
+    background #fff
+    position absolute
+    left 0
+    bottom 0
+    width 100%
+    transform scale(0)
+    transform-origin left top
+

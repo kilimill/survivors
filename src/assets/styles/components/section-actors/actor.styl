@@ -1,0 +1,197 @@
+.actor
+  position relative
+  display flex
+  align-items center
+  width 100%
+  height 100%
+
+  @media $mobile
+    flex-direction column
+
+  &__overimg
+    position relative
+    flex-basis 50%
+    flex-shrink 0
+    height 100%
+    width 100%
+
+    @media $mobile
+      flex-basis auto
+      height 382rem
+
+  &__img
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    width 100%
+    height 100%
+    object-fit cover
+
+  &__content
+    position relative
+    flex-basis 50%
+    display flex
+    flex-direction column
+    width 100%
+    height 100%
+    padding 195rem 49rem 34rem 142rem
+
+    @media $mobile
+      flex-basis auto
+      height auto
+      padding 45rem 18rem 33rem 18rem
+
+  &__name-wrap
+    position relative
+
+  &__name 
+    margin-bottom 72rem
+    padding-right 168rem
+    font-size 35rem
+    line-height 41rem
+
+    @media $mobile
+      margin-bottom 39rem
+      padding-right 105rem
+      font-size 24rem
+      line-height 28rem
+
+  &__age
+    position absolute
+    top 5rem
+    right 63rem
+    font-size 30rem
+    line-height 35rem
+    color #777
+
+    @media $mobile
+      top 0
+      right 2rem
+      font-size 24rem
+      line-height 28rem
+
+  &__info-item
+    width 600rem
+    margin-bottom 44rem
+
+    &:last-child
+      margin-bottom 10rem
+
+    @media $mobile
+      width 100%
+
+  &__info-title
+    margin-bottom 19rem
+    font-size 19rem
+    line-height 26rem
+    font-weight 700
+
+    @media $mobile
+      margin-bottom 15rem
+      font-size 16rem
+      line-height 22rem
+    
+  &__info-text
+    font-size 19rem
+    line-height 24rem
+
+    @media $mobile
+      font-size 16rem
+      line-height 22rem
+
+  &__link
+    width 262rem
+    margin auto 0 0 auto
+    padding 11rem 0
+    font-size 18rem
+    line-height 24rem
+
+    @media $mobile
+      width 180rem
+      margin-left 0
+      padding 6rem 0
+      font-size 12rem
+      line-height 24rem
+  
+  &__link-play
+    width 43rem
+    height 43rem
+    margin-right 10rem
+
+    @media $mobile
+      width 23rem
+      height 23rem
+
+  &__spec
+    position absolute
+    left 0
+    bottom 0
+
+    @media $mobile
+      top 0
+      bottom auto
+
+  &__spec-text
+    pos absolute
+    bottom 250rem
+    left -75rem
+    font-size 15rem
+    line-height 20rem
+    text-transform uppercase
+    transform: rotate(-90deg)
+    padding-left 166rem
+    color rgba($white, 0.7)
+
+    &::before
+      content ''
+      pos absolute
+      width 118rem
+      height 1rem
+      background-color $white
+      left 0
+      top 50%
+      transform translateY(-50%)
+
+  &__spec-bottom
+    position absolute
+    left 42rem
+    bottom 34rem
+    display flex
+    align-items flex-end
+
+    @media $mobile
+      top -11rem
+      left 20rem
+
+  &__spec-restrictions
+    width 44rem
+    object-fit cover
+    margin-right 37rem
+
+    @media $mobile
+      width 22rem
+      margin-right 10rem
+
+  &__spec-tag
+    font-size 20rem
+    line-height 27rem
+    font-weight 500
+    text-transform uppercase
+    color $white
+
+    @media $mobile
+      position relative
+      font-size 12rem
+      line-height 16rem
+      color $black
+
+      &::before
+        content ''
+        pos absolute
+        left 112%
+        top 50%
+        transform translateY(-50%)
+        width 118rem
+        height 1rem
+        background-color $black
